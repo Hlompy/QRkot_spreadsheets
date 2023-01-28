@@ -37,28 +37,9 @@ source venv/bin/activate
 python3 -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
-Создать файл .env и заполнить его по следующему шаблону:
-```
-APP_TITLE=QRKot
-APP_DESCR=Благотворительного фонда поддержки котиков
-DATABASE_URL=sqlite+aiosqlite:///./fastapi.db
-SECRET=fjednfsvlkdnvljdsnf
-FIRST_SUPERUSER_EMAIL=admin@mail.ru
-FIRST_SUPERUSER_PASSWORD=admin
-# адрес вашего личного гугл-аккаунта
-EMAIL=
-# данные из JSON-файла с информацией для авторизации приложения в сервисном аккаунте
-TYPE="service_account"
-PROJECT_ID=
-PRIVATE_KEY_ID=
-PRIVATE_KEY=
-CLIENT_EMAIL=
-CLIENT_ID=
-AUTH_URI="https://accounts.google.com/o/oauth2/auth"
-TOKEN_URI="https://oauth2.googleapis.com/token"
-auth_provider_x509_cert_url="https://www.googleapis.com/oauth2/v1/certs"
-client_x509_cert_url=
-```
+Создать файл .env и заполнить его по шаблону, как в файле `env.example`
+
+
 Применить миграции для создания БД
 ```
 alembic init --template async alembic
