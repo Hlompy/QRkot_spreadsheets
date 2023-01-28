@@ -6,6 +6,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.base import MainBase
 
+FALSE = False
+
 
 async def donation_process(
     obj_in: MainBase,
@@ -13,7 +15,7 @@ async def donation_process(
     session: AsyncSession
 ) -> MainBase:
     source_db_all = await session.execute(select(model_db).where(
-        model_db.fully_invested == False
+        model_db.fully_invested == FALSE
     ).order_by(model_db.create_date))
     source_db_all = source_db_all.scalars().all()
     for source_db in source_db_all:
